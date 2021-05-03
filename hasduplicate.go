@@ -28,6 +28,7 @@ func checkerArr(arr []int) []int {
 
 func main() {
 
+	// please, insert testing arr here
 	duplArr1 := []int{1, 23, 34, 2, 23, 4, 2, 1}
 	duplArr2 := []int{23, 23, 34, 2, 42, 33, 4, 23, 4, 2, 1}
 	duplArr3 := []int{0, 0, 12, 23, 0, 12, 23, 23, 34, 0, 2, 42, 0, 33, 4, 23, 4, 2, 1}
