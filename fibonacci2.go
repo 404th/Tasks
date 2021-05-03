@@ -1,29 +1,41 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sync"
+)
 
 func main() {
-	fmt.Println(fibo1(11))
-	fmt.Println(fibo2(11))
+
+	var wt sync.WaitGroup
+	wt.Add(1)
+	go fibo1(10, &wt)
+	// go fmt.Println(fibo2(101, &wt))
+	wt.Wait()
 }
 
 // using recursive func
-func fibo1(num int) int {
+func fibo1(num int, wt *sync.WaitGroup) int {
 	if num <= 1 {
+		fmt.Println(num)
 		return num
 	}
 
-	return fibo1(num-1) + fibo1(num-2)
+	fmt.Println(num)
+	wt.Done()
+	return fibo1(num-1, wt) + fibo1(num-2, wt)
 }
 
 // simple way
-func fibo2(num int) int {
-	x, y, c := 0, 1, 0
-	for i := 0; i < num; i++ {
-		c = y
-		y += x
-		x = c
-	}
+// func fibo2(num int, wt *sync.WaitGroup) int {
+// 	defer wt.Done()
+// 	wt.Wait()
+// 	x, y, c := 0, 1, 0
+// 	for i := 0; i < num; i++ {
+// 		c = y
+// 		y += x
+// 		x = c
+// 	}
 
-	return c
-}
+// 	return c
+// }
