@@ -50,13 +50,15 @@ func isPalendrom(x []bool, originArr []int) bool {
 }
 
 func main() {
-	////
-	digitsArr := extractNumber(12321)
+	//// Please insert here number
+	var num int = 1212121
+
+	digitsArr := extractNumber(num)
 	digitsIsTrue := checker(digitsArr)
 
 	if isPalendrom(digitsIsTrue, digitsArr) {
-		fmt.Println("Yes, it is Palendrome!")
+		fmt.Printf("Yes, %v is Palendrome!\n", num)
 	} else {
-		fmt.Println("No, it is not Palendrome!")
+		fmt.Printf("No, %v is not Palendrome!\n", num)
 	}
 }
