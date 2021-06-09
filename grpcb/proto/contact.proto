@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package proto;
+
+service ContactService {
+    rpc Plus(Req) returns (Resp);
+    rpc Mult(Req) returns (Resp);
+    rpc Div(Req) returns (Resp);
+    rpc Min(Req) returns (Resp);
+}
+
+message Req {
+    int32 A = 1;
+    int32 B = 2;
+}
+
+message Resp {
+    int32 Res = 1;
+}

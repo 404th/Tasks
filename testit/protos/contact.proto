@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package genproto;
+
+service ContactService {
+    rpc CreateContact (ContactCreateReq) returns (WithID) {};
+    rpc GetContact (WithID) returns (Contact) {};
+    rpc GetAllContacts (EmptyResponse) returns (Contacts) {};
+    rpc UpdateContact (Contact) returns (Contact) {};
+    rpc DeleteContact (WithID) returns (EmptyResponse) {};
+}
+
+message Contact {
+    int32 id = 1;
+    string username = 2;
+    string name = 3;
+    uint32 age = 4;
+}
+
+message Contacts {
+    repeated Contact contacts = 1;
+}
+
+message ContactCreateReq {
+    string username = 1;
+    string name = 2;
+    uint32 age = 3;
+}
+
+message WithID {
+    int32 id = 1;
+}
+
+message EmptyResponse {
+}

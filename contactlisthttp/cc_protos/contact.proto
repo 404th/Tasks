@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package contact;
+
+service ContactService {
+    rpc CreateContact (ContactCreateReq) returns (WithID){};
+    rpc GetContact (WithID) returns (Contact){};
+    rpc GetAllContacts (EmptyResponse) returns (Contacts){};
+    rpc UpdateContact (Contact) returns (WithID) {};
+    rpc DeleteContact (WithID) returns (EmptyResponse) {};
+}
+
+message Contact {
+    string ID = 1;
+    string Name = 2;
+    string Username = 3;
+    string Password = 4;
+}
+
+message Contacts {
+    repeated Contact Contacts = 1;
+}
+
+message ContactCreateReq {
+    string Name = 1;
+    string Username = 2;
+    string Password = 3;
+}
+
+message GetResponse {
+    Contact Contact = 1;
+}
+
+message WithID {
+    string ID = 1;
+}
+
+message EmptyResponse {
+}

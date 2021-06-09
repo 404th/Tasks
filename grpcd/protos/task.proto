@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package protos;
+
+service ServiceName {
+    rpc Create (Task) returns (WithID);
+    rpc Get (WithID) returns (Task);
+    rpc GetAll (Empty) returns (Tasks);
+    rpc Update (Task) returns (WithID);
+    rpc Delete (WithID) returns (WithID);
+}
+
+message Task {
+    string id = 1;
+    string title = 2;
+    string body = 3;
+}
+
+message Tasks {
+    repeated Task tasks = 1;
+}
+
+message WithID {
+    string id = 1;
+}
+
+message Empty {
+}

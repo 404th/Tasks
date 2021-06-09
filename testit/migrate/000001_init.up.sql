@@ -1,0 +1,11 @@
+CREATE TABLE contacts (
+    id SERIAL NOT NULL UNIQUE,
+    name VARCHAR(25) NOT NULL,
+    username VARCHAR(25) NOT NULL UNIQUE,
+    age VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE contacts (
+    name VARCHAR(25) NOT NULL,
+    username VARCHAR(25) NOT NULL
+);

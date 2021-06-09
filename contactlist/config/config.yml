@@ -1,0 +1,7 @@
+port: "1144"
+db:
+  username: "spenc"
+  db_port: "5432"
+  db_host: "localhost"
+  db_name: "test_db"
+  ssl_mode: "disable"
