@@ -1,6 +1,10 @@
 # UDevs(Golang) Tasks
-### References
 
--- <a link="https://github.com/404th/Tasks/tree/master/fib">Fibonacci</a>
-- [NodeJS](./fib)
+
+-> [Fibonacci](./fib)
+-> [Fibonacci](./fib2)
+-> [Fibonacci](./fizz)
+-> [Fibonacci](./hasduplicate)
+-> [Fibonacci](./oddeven)
+-> [Fibonacci](./palendrom)
 <!-- - [ReactJS](./ReactJS/readme.md) -->
