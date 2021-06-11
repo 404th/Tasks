@@ -2,9 +2,9 @@
 
 
 - -> [Fibonacci](./fib)
-- -> [Fibonacci](./fib2)
-- -> [Fibonacci](./fizz)
-- -> [Fibonacci](./hasduplicate)
-- -> [Fibonacci](./oddeven)
-- -> [Fibonacci](./palendrom)
+- -> [Fibonacci-2](./fib2)
+- -> [FizzBuzz](./fizz)
+- -> [HasDuplicate](./hasduplicate)
+- -> [OddEven](./oddeven)
+- -> [Palendrome](./palendrom)
 <!-- - [ReactJS](./ReactJS/readme.md) -->
