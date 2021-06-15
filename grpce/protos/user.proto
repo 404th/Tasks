@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package protos;
+
+service AuthService {
+    rpc Create (CreateRequest) returns (CreateResponse);
+    rpc Get (WithID) returns (User);
+    rpc Delete (WithID) returns (DeleteResponse);
+}
+
+message User {
+    string id = 1;
+    string username = 2;
+    int32 age = 3;
+    bool is_adult = 4;
+}
+
+message CreateRequest {
+    string username = 1;
+    int32 age = 2;
+    bool is_adult = 3;
+}
+
+message CreateResponse {
+    string id = 1;
+    bool is_created = 2;
+}
+
+message WithID {
+    string id = 1;
+}
+
+message DeleteResponse {
+    string id = 1;
+    bool is_deleted = 2;
+}
