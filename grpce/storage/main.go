@@ -7,11 +7,13 @@ import (
 )
 
 type storagePg struct {
+	db *sqlx.DB
 	repo repo.UserStorageI
 }
 
 func NewStoragePg(db *sqlx.DB) StorageI {
 	return &storagePg{
+		db: db,
 		repo: postgres.NewRepo(db),
 	}
 }

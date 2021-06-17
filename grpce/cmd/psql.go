@@ -1,4 +1,4 @@
-package grpce
+package main
 
 import (
 	"fmt"
@@ -16,7 +16,7 @@ type Config struct {
 	sslmode string
 }
 
-func NewPsqlDB (cfg Config) (*sqlx.DB, error) {
+func NewPsqlDB (cfg *Config) (*sqlx.DB, error) {
 	db, err := sqlx.Open("postgres", fmt.Sprintf("host=%s port=%s user=%s dbname=%s password=%s sslmode=%s", cfg.host, cfg.port, cfg.user, cfg.password, cfg.password, cfg.sslmode))
 
 	if err != nil {
